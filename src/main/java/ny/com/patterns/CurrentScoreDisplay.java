@@ -3,6 +3,8 @@ package ny.com.patterns;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CurrentScoreDisplay implements Observer {
     int runs;
@@ -12,8 +14,11 @@ public class CurrentScoreDisplay implements Observer {
 
 
     private void display () {
-        System.out.println ("Current Score Display:::\n"+"runs: "+runs+
+        Logger logger=Logger.getLogger("display current score");
+
+        logger.logp (Level.INFO,"ny.com.patterns","display","Current Score Display:::\n"+"runs: "+runs+
                 "\nwickets: "+wickets +"\n overs: "+overs);
+
     }
 
 

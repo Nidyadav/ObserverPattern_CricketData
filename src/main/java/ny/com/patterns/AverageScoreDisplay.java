@@ -3,6 +3,8 @@ package ny.com.patterns;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AverageScoreDisplay implements Observer {
     private float runRate;
@@ -11,7 +13,12 @@ public class AverageScoreDisplay implements Observer {
 
     public void display()
     {
-      System.out.println ("Average Score Display:::\n"+"Run rate: "+runRate+"\nPredicted score: "+predictedScore);
+        Logger logger=Logger.getLogger("display Average score");
+
+        logger.logp (Level.INFO,"ny.com.patterns","display","Average Score Display:::\n"
+                +"Run rate: "+runRate+"\nPredicted score: "+predictedScore);
+
+
     }
 
 
